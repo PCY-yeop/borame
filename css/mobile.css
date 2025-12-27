@@ -1,7 +1,5 @@
 @media screen and (max-width: 767px) {
-  .hero img:nth-of-type(1){
-    display: none;
-  }
+  .hero img:nth-of-type(1){display: none;}
   /* ===== 전역 설정 ===== */
   :root { --header-h: 96px; }
   html, body { margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
@@ -20,8 +18,7 @@
   .nav-link { flex: 1 1 25%; text-align: center; font-size: 18px; font-weight: 500; white-space: nowrap; padding: 6px 0; text-decoration: none; color: #000; }
 
   /* ===== 사이드 메뉴 (Drawer) ===== */
-  .drawer {
-    position: fixed; inset: 0; z-index: 10000;
+  .drawer {position: fixed; inset: 0; z-index: 10000;
     opacity: 0; visibility: hidden; pointer-events: none;
     transition: opacity .24s ease, visibility .24s ease;
   }
@@ -106,7 +103,6 @@
   @media (prefers-reduced-motion: reduce) {
     .drawer, .drawer-backdrop, .drawer-panel { transition: none !important; }
   }
-}
     #section-form {
       background: url('../img/backimg\ 1.jpg') center bottom / cover;
       padding-bottom: 20px;
@@ -176,12 +172,28 @@
       text-align: center; font-weight: 600; color: #338077;
     }
         /* 안내페이지 상단 */
-    .page-hero {
+.page-hero {
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 150px; /* 높이가 너무 낮으면(100px) 답답해 보일 수 있어 상향 조정 권장 */
     background: url('../img/special-bg.png') 100% bottom / cover no-repeat;
+    
+    /* 추가된 중앙 정렬 코드 */
     display: flex;
+    justify-content: center; /* 좌우 가운데 정렬 */
+    align-items: center;     /* 상하 가운데 정렬 */
+    text-align: center;
+    
     color: #fff;
-    padding-top: 150px;
-  }
+    /* padding-top: 150px; */ /* 완벽한 중앙 정렬을 위해 기존 패딩은 주석 처리하거나 제거하세요 */
+}
+
+/* 내부 텍스트 스타일 */
+.page-hero h2 {
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); /* 배경 대비 가독성 확보 */
+    margin: 0;
+}
+}
