@@ -74,9 +74,27 @@
 
   <!-- 메인 스크립트 -->
   <script src="js/script.js" defer></script>
+  
 </head>
 
 <body>
+  <!-- 팝업창 -->
+  <div id="mainPopupOverlay" class="popup-overlay">
+      <div class="popup-content">
+          <!-- 팝업 이미지 -->
+          <div class="popup-img-wrap">
+              <img src="/img/event.png" alt="이벤트">
+          </div>
+
+          <!-- 하단 버튼 (1:1 비율) -->
+          <div class="popup-btn-group">
+              <button type="button" id="btnTodayHide" class="btn-popup">오늘 하루 보지 않기</button>
+              <button type="button" id="btnPopupClose" class="btn-popup btn-close-bold">닫기</button>
+          </div>
+      </div>
+  </div>
+
+
 
 <header class="header">
   

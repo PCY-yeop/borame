@@ -8,17 +8,6 @@
  * 6. 섹션 스무스 스크롤 (헤더 오프셋 반영)
  */
 
-// 1. NAV: 현재 페이지 활성화
-(function () {
-  const navLinks = document.querySelectorAll('.nav-link');
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
-    }
-  });
-})();
-
 // 3. 모바일 메뉴(Drawer) 제어
 (function(){
   const btn = document.querySelector('.menu-btn');
@@ -214,3 +203,43 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('pageshow', (e) => { if (shouldScroll()) smoothToTarget(); });
 })();
 
+// 팝업창 ------------------------------------------------------------------
+/* 3. 팝업 자바스크립트 로직 */
+  (function() {
+      const STORAGE_KEY = 'main_popup_hide_until';
+      const overlay = document.getElementById('mainPopupOverlay');
+      const btnHide = document.getElementById('btnTodayHide');
+      const btnClose = document.getElementById('btnPopupClose');
+
+      // 팝업 닫기
+      function closePopup() {
+          overlay.style.display = 'none';
+          document.body.classList.remove('popup-open');
+      }
+
+      // 초기 실행: 노출 여부 확인
+      function initPopup() {
+          const hideUntil = localStorage.getItem(STORAGE_KEY);
+          const now = Date.now();
+
+          // 저장된 시간이 없거나, 설정 시간이 지났을 때만 보여줌
+          if (!hideUntil || now > parseInt(hideUntil)) {
+              overlay.style.display = 'flex';
+              document.body.classList.add('popup-open');
+          }
+      }
+
+      // 오늘 하루 보지 않기 클릭
+      btnHide.addEventListener('click', function() {
+          const expiry = Date.now() + (24 * 60 * 60 * 1000); // 24시간 후 타임스탬프
+          localStorage.setItem(STORAGE_KEY, expiry);
+          closePopup();
+      });
+
+      // 닫기 클릭
+      btnClose.addEventListener('click', closePopup);
+
+      // 페이지 로드 후 실행
+      document.addEventListener('DOMContentLoaded', initPopup);
+  })();
+// -------------------------------------------------------------------------
