@@ -10,42 +10,59 @@ body{font-family:'Noto Sans KR',sans-serif;line-height:1.6;background:#fff;color
 /* 2. 팝업 CSS 스타일 */
 .popup-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: none; /* 기본 숨김 */
-    align-items: center; justify-content: center;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* 배경을 조금 더 어둡게 설정 */
+    display: none; 
+    align-items: center; 
+    justify-content: center;
     z-index: 10000;
 }
 
 .popup-content {
     background: #fff;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 16px;
+    width: auto; /* 이미지 너비에 맞게 자동으로 조절 */
+    max-width: 95%; /* 모바일에서 좌우 여백 확보 */
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-img-wrap {
+    /* 화면 높이의 80%로 설정 */
+    height: 80vh; 
+    background: #f0f0f0;
+    overflow: hidden;
 }
 
 .popup-img-wrap img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    /* 이미지 비율을 유지하면서 영역을 채움 (중요) */
+    object-fit: contain; 
     display: block;
 }
 
 .popup-btn-group {
     display: flex;
     border-top: 1px solid #eee;
+    background: #fff;
 }
 
 .btn-popup {
-    flex: 1; /* 1:1 비율 핵심 */
-    height: 54px;
+    flex: 1;
+    height: 56px;
     background: #fff;
     border: none;
-    font-size: 14px;
-    color: #666;
+    font-size: 15px;
+    color: #444;
     cursor: pointer;
     outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-popup:first-child {
@@ -54,14 +71,14 @@ body{font-family:'Noto Sans KR',sans-serif;line-height:1.6;background:#fff;color
 
 .btn-close-bold {
     font-weight: bold;
-    color: #007bff; /* 닫기 버튼 강조 컬러 */
+    color: #007bff;
 }
 
 .btn-popup:hover {
     background: #f9f9f9;
 }
 
-/* 팝업 활성화 시 스크롤 방지 */
+/* 팝업 활성화 시 본문 스크롤 방지 */
 body.popup-open {
     overflow: hidden;
 }
