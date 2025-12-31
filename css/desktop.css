@@ -2,6 +2,9 @@
 @media screen and (min-width: 768px) {
 
   /* 1. 불필요한 이미지 및 요소 숨김 */
+  .top-info-banner {
+    display: none;
+  }
   .hero img:nth-of-type(n+2),
   .tel-icon {
     display: none !important;
