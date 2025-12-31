@@ -1,10 +1,34 @@
 
 @media screen and (max-width: 767px) {
 
+/* 최상단 안내 배너 스타일 */
+.top-info-banner {
+    width: 100%;
+    /* 텍스트가 한 줄로 깔끔하게 보일 수 있는 높이 설정 */
+    min-height: 25px; 
+    background-color: #ff4d00; /* 빨강과 주황 사이의 다홍색 계열 */
+    color: #ffffff; /* 기본 글자색: 흰색 */
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6px 10px; /* 위아래 5px 패딩으로 약 20-25px 높이 형성 */
+    letter-spacing: -0.5px;
+    box-sizing: border-box;
+}
+
+/* 주요 키워드 강조 스타일 (노란색) */
+.top-info-banner .highlight {
+    color: #ffea00; 
+    margin: 0 2px;
+}
+
   
   .hero img:nth-of-type(1){display: none;}
   /* ===== 전역 설정 ===== */
-  :root { --header-h: 96px; }
+  :root { --header-h: 108px; }
   html, body { margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
   *, *::before, *::after { box-sizing: border-box; }
   body { padding-top: var(--header-h) !important; overscroll-behavior-y: contain; }
