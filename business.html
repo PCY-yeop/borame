@@ -4,54 +4,74 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>사업안내 | 보라매 파르크힐</title>
+  <!-- ✅ SEO 최적화: 서브페이지 전용 키워드 강화 -->
+  <title>사업안내 | 보라매 파르크힐 - 프리미엄 단지 개요</title>
+  <meta name="description" content="보라매 파르크힐의 사업개요, 입지환경, 단지 규모 및 분양 일정을 안내합니다. 여의도와 강남을 잇는 서울 핵심 입지의 미래가치를 사업안내 페이지에서 확인하세요.">
+  <meta name="keywords" content="보라매 파르크힐 사업안내, 신축 아파트 사업개요, 서울 아파트 분양 일정, 여의도 생활권 아파트">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://borame.vercel.app/business.html">
 
-  <!-- preconnect / 폰트 / CSS (공통) -->
+  <!-- 브라우저 UI 색상 최적화 (모바일) -->
+  <meta name="theme-color" content="#1a2a4e">
+
+  <!-- ✅ 성능 최적화: 외부 리소스 사전 연결 -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="preconnect" href="https://www.youtube.com">
-  <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+
+  <!-- CSS 링크 유지 (reset, common 등 순서 중요) -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/desktop.css">
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)">
   <link rel="stylesheet" href="css/page-business.css" media="(max-width: 767px)">
 
-  <!-- OG/Twitter -->
+  <!-- ✅ SNS 공유 최적화 (OG/Twitter) -->
   <meta property="og:locale" content="ko_KR">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="보라매 파르크힐">
-  <meta property="og:title" content="사업안내 | 보라매 파르크힐">
-  <meta property="og:description" content="재개발 개요, 세대수, 일정, 분양 방식 안내.">
+  <meta property="og:title" content="사업안내 | 보라매 파르크힐 - 서울 핵심 입지 아파트 개요">
+  <meta property="og:description" content="재개발 개요, 세대수, 프리미엄 입지 분석 등 보라매 파르크힐의 모든 사업 정보를 공개합니다.">
   <meta property="og:url" content="https://borame.vercel.app/business.html">
   <meta property="og:image" content="https://borame.vercel.app/img/sam.png">
-  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- 구조화데이터: WebPage + Breadcrumb -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="보라매 파르크힐 사업안내">
+  <meta name="twitter:description" content="단지 규모와 입지 가치를 한눈에 확인하세요.">
+
+  <!-- ✅ 구조화 데이터 보강 (BreadcrumbList는 검색 결과의 경로를 예쁘게 만듭니다) -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"사업안내",
-    "url":"https://borame.vercel.app/business.html"
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "보라매 파르크힐 사업안내",
+    "description": "보라매 파르크힐의 건축 규모, 세대수, 입지 분석 등 상세 사업 개요 안내 페이지입니다.",
+    "url": "https://borame.vercel.app/business.html"
   }
   </script>
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"홈","item":"https://borame.vercel.app/"},
-      {"@type":"ListItem","position":2,"name":"사업안내","item":"https://borame.vercel.app/business.html"}
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://borame.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "사업안내",
+        "item": "https://borame.vercel.app/business.html"
+      }
     ]
   }
   </script>
 
-  <!-- 예약 폼 없으면 flatpickr 불필요 -->
+  <!-- 메인 스크립트 (지연 실행) -->
   <script src="js/script.js" defer></script>
 </head>
 <body>
