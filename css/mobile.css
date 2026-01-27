@@ -31,7 +31,7 @@
   :root { --header-h: 108px; }
   html, body { margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
   *, *::before, *::after { box-sizing: border-box; }
-  body { padding-top: var(--header-h) !important; overscroll-behavior-y: contain; }
+  body { padding-top: var(--header-h) !important; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; }
 
   /* ===== 헤더 (Header) ===== */
   .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: #fff; }
